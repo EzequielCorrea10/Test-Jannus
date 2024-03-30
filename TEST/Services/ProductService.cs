@@ -9,11 +9,14 @@ namespace TEST.Services
 {
     public class ProductService
     {
-        public void CreateProduct(string name, float price, int typeId)
+        private ConexionDB conexionDB;
+        public ProductService()
         {
-            var product = new Product(name, price, typeId);
-
+            // Instancia de la clase ConexionDB pasando la cadena de conexión como parámetro
+            conexionDB = new ConexionDB();
         }
+
+
 
     }
 }
