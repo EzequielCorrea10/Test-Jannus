@@ -16,7 +16,12 @@ namespace TEST.Services
             conexionDB = new ConexionDB();
         }
 
-
+        public void CreateProduct(string name, float price, int typeId)
+        {
+            var product = new Product(name, price, typeId);
+            conexionDB.InsertProduct()
+            
+        }
 
     }
 }

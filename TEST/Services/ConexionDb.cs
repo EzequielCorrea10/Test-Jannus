@@ -26,8 +26,8 @@ public class ConexionDB
 
                 // Agregar parámetros al procedimiento almacenado
                 command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@NuevoNombre", nuevoNombre);
-                command.Parameters.AddWithValue("@NuevoPrecio", nuevoPrecio);
+                command.Parameters.AddWithValue("@NewName", nuevoNombre);
+                command.Parameters.AddWithValue("@NewPrice", nuevoPrecio);
 
                 command.ExecuteNonQuery();
             }
@@ -39,7 +39,7 @@ public class ConexionDB
         }
     }
 
-    public void InsertProduct(int id, string nuevoNombre, decimal nuevoPrecio)
+    public void InsertProduct(int id, string name, decimal price)
     {
         try
         {
@@ -52,8 +52,8 @@ public class ConexionDB
 
                 // Agregar parámetros al procedimiento almacenado
                 command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@NuevoNombre", nuevoNombre);
-                command.Parameters.AddWithValue("@NuevoPrecio", nuevoPrecio);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Price", price);
 
                 command.ExecuteNonQuery();
             }
@@ -65,7 +65,7 @@ public class ConexionDB
         }
     }
 
-    public void DeleteProduct (int id, string nuevoNombre, decimal nuevoPrecio)
+    public void DeleteProduct (int id)
     {
         try
         {
@@ -78,8 +78,6 @@ public class ConexionDB
 
                 // Agregar parámetros al procedimiento almacenado
                 command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@NuevoNombre", nuevoNombre);
-                command.Parameters.AddWithValue("@NuevoPrecio", nuevoPrecio);
 
                 command.ExecuteNonQuery();
             }
