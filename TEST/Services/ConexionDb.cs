@@ -39,7 +39,7 @@ public class ConexionDB
         }
     }
 
-    public void InsertProduct(int id, string name, decimal price)
+    public void InsertProduct(int typeId, string name, float price)
     {
         try
         {
@@ -51,9 +51,9 @@ public class ConexionDB
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Agregar parámetros al procedimiento almacenado
-                command.Parameters.AddWithValue("@Id", id);
                 command.Parameters.AddWithValue("@Name", name);
                 command.Parameters.AddWithValue("@Price", price);
+                command.Parameters.AddWithValue("@TypeId", typeId);
 
                 command.ExecuteNonQuery();
             }

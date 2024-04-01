@@ -19,7 +19,7 @@ namespace TEST.Services
         public void CreateProduct(string name, float price, int typeId)
         {
             var product = new Product(name, price, typeId);
-            conexionDB.InsertProduct()
+            conexionDB.InsertProduct(typeId,name, price );
             
         }
 
