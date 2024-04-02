@@ -21,7 +21,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="TypeId" Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                    <GridViewColumn x:Name="Description" Header="Description" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn x:Name="Description" Header="Description" DisplayMemberBinding="{Binding description}"/>
                 </GridView>
             </ListView.View>
         </ListView>

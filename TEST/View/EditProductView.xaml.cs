@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using TEST.Model;
+using TEST.Database;
 using TEST.ViewModel;
 
 namespace TEST

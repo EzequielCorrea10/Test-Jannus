@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TEST.Model
 {
-    class Stock
-    {
-        public int Id { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
-    }
+    //class Stock
+    //{
+    //    public int Id { get; set; }
+    //    public int ProductId { get; set; }
+    //    public int Quantity { get; set; }
+    //}
 }

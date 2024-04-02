@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TEST.Model;
+using TEST.Database;
 using TEST.Services;
 
 namespace TEST.ViewModel

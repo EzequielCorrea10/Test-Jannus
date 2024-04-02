@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TEST.Model;
+using TEST.Database;
+
 
 namespace TEST.Services
 {
@@ -18,7 +19,6 @@ namespace TEST.Services
 
         public void CreateProduct(string name, decimal price, int typeId)
         {
-            var product = new Product(name, price, typeId);
             conexionDB.InsertProduct(typeId,name, price );
         }
         public void CreateProductType(string description)

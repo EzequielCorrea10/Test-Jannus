@@ -3,10 +3,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Objects;
-using TEST.Model;
 using System.Collections.Generic;
 using System.Linq;
-
+using TEST.Database;
 
 public class ConexionDB
 {
@@ -18,6 +17,7 @@ public class ConexionDB
     {
         connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
     }
+
         public void ModifyProduct(int id, string nuevoNombre, decimal nuevoPrecio)
     {
         try
@@ -139,66 +139,36 @@ public class ConexionDB
 
     internal List<Product> GetProducts()
     {
-        var list = new List<Product>();
+        List<Product> list = new List<Product>();
         try
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (var context = new TestEntities1())
             {
-                connection.Open();
+                 list = context.Product.ToList();
 
-                SqlCommand command = new SqlCommand("sp_GetProducts", connection);
-                command.CommandType = CommandType.StoredProcedure;
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        int id = Convert.ToInt32(reader["Id"]);
-                        string name = Convert.ToString(reader["Name"]);
-                        decimal price = Convert.ToDecimal(reader["Price"]);
-                        int productTypeId = Convert.ToInt32(reader["ProductTypeId"]);
-
-                        Product product = new Product(id, name, price, productTypeId);
-                        list.Add(product);
-                    }
-                }
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
+            Console.WriteLine("Error al obtener los productos: " + ex.Message);
         }
         return list;
     }
 
     internal List<ProductType> GetProductTypes()
     {
-        var list = new List<ProductType>();
+        List<ProductType> list = new List<ProductType>();
         try
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+            using (var context = new TestEntities1())
             {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand("sp_GetProductTypes", connection);
-                command.CommandType = CommandType.StoredProcedure;
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        int id = Convert.ToInt32(reader["Id"]);
-                        string description = Convert.ToString(reader["Description"]);
-
-                        ProductType productType = new ProductType(id, description);
-                        list.Add(productType);
-                    }
-                }
+                list = context.ProductType.ToList();
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
+            Console.WriteLine("Error al obtener los tipos de productos: " + ex.Message);
         }
         return list;
     }

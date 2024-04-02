@@ -130,6 +130,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -179,6 +180,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Database\Product.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ProductType.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sp_GetProducts_Result.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sp_GetProductTypes_Result.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Stock.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TestContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TestContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TestContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\StockReport.cs" />
     <Compile Include="Services\ConexionDb.cs" />
     <Compile Include="Services\ProductService.cs" />
@@ -221,6 +252,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Database\TestContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TestContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\TestContext.edmx.diagram">
+      <DependentUpon>TestContext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -275,6 +313,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\AddProductType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\TestContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TestContext.edmx</DependentUpon>
+      <LastGenOutput>TestContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\TestContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TestContext.edmx</DependentUpon>
+      <LastGenOutput>TestContext.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
