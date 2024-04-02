@@ -68,6 +68,32 @@ public class ConexionDB
         }
     }
 
+    public void EditProduct(int id,int typeId, string name, decimal price)
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("sp_ModifyProduct", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Agregar parámetros al procedimiento almacenado
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@NewName", name);
+                command.Parameters.AddWithValue("@NewPrice", price);
+                command.Parameters.AddWithValue("@NewTypeId", typeId);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
+        }
+    }
+
     public void DeleteProduct(int id)
     {
         try

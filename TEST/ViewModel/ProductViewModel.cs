@@ -24,9 +24,9 @@ namespace TEST.ViewModel
         {
             productService.CreateProduct(name, price, producTypeId);
         }
-        public void EditProduct(string name, decimal price, int producTypeId)
+        public void EditProduct(int id,string name, decimal price, int producTypeId)
         {
-            productService.CreateProduct(name, price, producTypeId);
+            productService.EditProduct(id,name, price, producTypeId);
         }
         public void DeleteProduct(int id)
         {

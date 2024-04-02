@@ -21,6 +21,10 @@ namespace TEST.Services
             var product = new Product(name, price, typeId);
             conexionDB.InsertProduct(typeId,name, price );
         }
+        public void EditProduct(int id,string name, decimal price, int typeId)
+        {
+            conexionDB.EditProduct(id,typeId, name, price);
+        }
         public void DeleteProduct(int id)
         {
             conexionDB.DeleteProduct(id);

@@ -184,8 +184,8 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\StockService.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
-    <Compile Include="View\ModifyProductView.xaml.cs">
-      <DependentUpon>ModifyProductView.xaml</DependentUpon>
+    <Compile Include="View\EditProductView.xaml.cs">
+      <DependentUpon>EditProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
@@ -228,7 +228,7 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\ModifyProductView.xaml">
+    <Page Include="View\EditProductView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
