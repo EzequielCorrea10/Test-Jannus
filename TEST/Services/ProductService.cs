@@ -20,8 +20,18 @@ namespace TEST.Services
         {
             var product = new Product(name, price, typeId);
             conexionDB.InsertProduct(typeId,name, price );
-            
         }
-
+        public void DeleteProduct(int id)
+        {
+            conexionDB.DeleteProduct(id);
+        }
+        public Product[] GetProducts()
+        {
+            conexionDB.GetProducts();
+        }
+        public void GetProductTypes()
+        {
+            conexionDB.GetProductTypes();
+        }
     }
 }

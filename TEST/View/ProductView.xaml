@@ -11,15 +11,16 @@
         </Grid.Background>
         <Button  Click="Back" Content="Back&#xA;" Canvas.Left="93" Canvas.Top="60" FontSize="24" Margin="50,67,526,937" FontWeight="Bold"/>
         <Canvas Name="AddProduct">
-            <TextBox x:Name="Name" Height="46" Canvas.Left="93" TextWrapping="Wrap"  Canvas.Top="269" Width="301" TextChanged="TextBox_TextChanged"/>
-            <Button  Click="AddProduct_Click" Content="Add Product&#xD;&#xA;" Canvas.Left="480" Canvas.Top="800" Width="184" Height="56" FontSize="24" FontWeight="Bold"/>
-            <TextBox x:Name="Price" Height="46" Canvas.Left="93" TextWrapping="Wrap" Text="{Binding Value, StringFormat=N2}" Canvas.Top="388" Width="301" TextChanged="TextBox_TextChanged"/>
             <TextBlock Canvas.Left="93" TextWrapping="Wrap" Text="Name" Canvas.Top="206" Height="38" Width="102" FontSize="24" Foreground="#FFA1A4A6"/>
+            <TextBox x:Name="Name" Height="46" Canvas.Left="93" TextWrapping="Wrap"  Canvas.Top="269" Width="301" TextChanged="TextBox_TextChanged"/>
             <TextBlock Canvas.Left="93" TextWrapping="Wrap" Text="Price" Canvas.Top="335" Height="38" Width="102" FontSize="24" Foreground="#FFA1A4A6"/>
+            <TextBox x:Name="Price" Height="46" Canvas.Left="93" TextWrapping="Wrap" Canvas.Top="388" Width="301" TextChanged="Price_TextChanged" PreviewTextInput="Price_PreviewTextInput"/>
+            <Button  Click="AddProduct_Click" Content="Add Product&#xD;&#xA;" Canvas.Left="480" Canvas.Top="800" Width="184" Height="56" FontSize="24" FontWeight="Bold"/>
             <ListView Name="ProductType" Height="196" Canvas.Left="93" Canvas.Top="536" Width="301" SelectionChanged="ListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn/>
+                        <GridViewColumn Header="Product Type Id" DisplayMemberBinding="{Binding ProductTypeId}"/>
+                        <GridViewColumn Header="Product Type" DisplayMemberBinding="{Binding ProductType}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
