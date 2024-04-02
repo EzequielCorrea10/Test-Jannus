@@ -83,8 +83,12 @@
     <Compile Include="Services\ConexionDb.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\StockService.cs" />
-    <Compile Include="ViewModel\ProductViewModel.cs" />
-    <Compile Include="ViewModel\StockViewModel.cs" />
+    <Compile Include="View\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Product.cs" />
@@ -124,9 +128,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MainWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="View\MenuWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -136,10 +140,16 @@
     <Resource Include="Assets\Button.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="EditProduct-removebg-preview.png" />
+    <Resource Include="Assets\EditProduct.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\EditProduct.png" />
+    <Resource Include="Assets\Add.png" />
+    <Resource Include="Assets\Delete.png" />
+    <Resource Include="Assets\Exit.png" />
+    <Resource Include="Assets\Stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StockReport.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

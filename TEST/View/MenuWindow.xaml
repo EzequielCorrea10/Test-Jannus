@@ -1,0 +1,36 @@
+﻿<Window x:Class="TEST.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="1080" Width="720">
+    <Grid IsEnabled="True" >
+        <Grid.Background>
+            <SolidColorBrush Color="#FF282F34"></SolidColorBrush>
+        </Grid.Background>
+        <Canvas x:Name="Button">
+            <Button  Name="add" Click="AddProduct_Click" Canvas.Left="83" Canvas.Top="86" Width="170" Height="169" Background="#00DDDDDD" >
+                <Image Source="/Assets/Add.png" IsEnabled="False" />
+            </Button>
+            <Button Name="stockRe" Click="StockRep_Click"  Canvas.Left="442" Canvas.Top="696" Width="172" Height="172" Background="#00DDDDDD">
+                <Image Source="/Assets/StockReport.png" IsEnabled="False"/>
+            </Button>
+
+            <Button  Name="edit" Click="Edit_Click" Canvas.Left="94" Canvas.Top="382" Width="168" Height="170" Background="#00DDDDDD">
+                <Image Source="/Assets/EditProduct.png" IsEnabled="False"/>
+            </Button>
+            <Button Click="Delete_Click"  Canvas.Left="448" Canvas.Top="98" Width="168" Height="170" Background="#00DDDDDD">
+                <Image Source="/Assets/Delete.png"  IsEnabled="False" />
+            </Button>
+            <Button Name="exit" Click="Exit_Click"  Canvas.Left="91" Canvas.Top="694" Width="168" Height="170" Background="#00DDDDDD">
+            <Image Source="/Assets/Exit.png"  IsEnabled="False" />
+            </Button>
+
+            <Button Name="stock" Click="Stock_Click" Canvas.Left="446" Canvas.Top="396" Width="168" Height="170" Background="#00DDDDDD">
+                <Image Source="/Assets/Stock.png" IsEnabled="False" />
+            </Button>
+
+        </Canvas>
+    </Grid>
+</Window>
