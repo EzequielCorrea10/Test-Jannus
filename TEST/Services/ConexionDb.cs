@@ -67,6 +67,28 @@ public class ConexionDB
             Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
         }
     }
+    public void InsertProductType(string description)
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("sp_InsertProductType", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Agregar parámetros al procedimiento almacenado
+                command.Parameters.AddWithValue("@Description", description);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
+        }
+    }
 
     public void EditProduct(int id,int typeId, string name, decimal price)
     {

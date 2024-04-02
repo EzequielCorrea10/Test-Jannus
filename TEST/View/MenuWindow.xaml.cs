@@ -42,9 +42,10 @@ namespace TEST
 
         }
 
-        private void Stock_Click(object sender, RoutedEventArgs e)
+        private void AddType_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductTypeView win2 = new ProductTypeView();
+            win2.Show();
         }
     }
 }

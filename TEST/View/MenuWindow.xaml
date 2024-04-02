@@ -25,8 +25,8 @@
             <Button Name="exit" Click="Exit_Click"  Canvas.Left="91" Canvas.Top="694" Width="168" Height="170" Background="#00DDDDDD">
                 <Image Source="/Assets/Exit.png"  IsEnabled="False" />
             </Button>
-            <Button Name="stock" Click="Stock_Click" Canvas.Left="446" Canvas.Top="396" Width="168" Height="170" Background="#00DDDDDD">
-                <Image Source="/Assets/Stock.png" IsEnabled="False" />
+            <Button Name="addType" Click="AddType_Click" Canvas.Left="446" Canvas.Top="396" Width="168" Height="170" Background="#00DDDDDD">
+                <Image Source="/Assets/AddProductType.png" IsEnabled="False" />
             </Button>
         </Canvas>
     </Grid>

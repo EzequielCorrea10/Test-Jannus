@@ -88,3 +88,5 @@ H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\EditProductView.g.cs
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\DeleteProductView.baml
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\DeleteProductView.g.cs
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.csproj.AssemblyReference.cache
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\ProductType.baml
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\ProductType.g.cs

@@ -18,12 +18,7 @@ namespace TEST
     /// </summary>
     public partial class DeleteProductView : Window
     {
-        private int id;
-        private string newName;
-        private decimal newPrice;
-        private int newProductTypeId;
         private ProductViewModel productModel;
-
         public DeleteProductView()
         {
             InitializeComponent();
@@ -51,8 +46,7 @@ namespace TEST
         {
             var product = (Product)ProductSelected.SelectedItem;
             productModel.DeleteProduct(product.Id);
-            MessageBox.Show("Product deleted succesfully");
-
+            var completeMessage = MessageBox.Show("Product deleted succesfully");
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
