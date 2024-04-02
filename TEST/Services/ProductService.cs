@@ -25,13 +25,13 @@ namespace TEST.Services
         {
             conexionDB.DeleteProduct(id);
         }
-        public Product[] GetProducts()
+        internal List<Product> GetProducts()
         {
-            conexionDB.GetProducts();
+            return conexionDB.GetProducts();
         }
-        public void GetProductTypes()
+        internal List<ProductType> GetProductTypes()
         {
-            conexionDB.GetProductTypes();
+            return conexionDB.GetProductTypes();
         }
     }
 }

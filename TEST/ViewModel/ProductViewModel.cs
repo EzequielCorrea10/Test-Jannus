@@ -25,17 +25,17 @@ namespace TEST.ViewModel
             productService.CreateProduct(name, price, producTypeId);
         }
 
-        public void DeleteProduct(string name, float price, int producTypeId)
+        public void DeleteProduct(int id)
         {
-            productService.CreateProduct(name, price, producTypeId);
+            productService.DeleteProduct(id);
         }
-        public Product[] GetProducts()
+        public List<Product> GetProducts()
         {
-            productService.GetProducts();
+           return  productService.GetProducts();
         }
-        public void GetProductTypes()
+        internal List<ProductType> GetProductTypes()
         {
-            productService.GetProductTypes();
+          return  productService.GetProductTypes();
         }
     }
 }

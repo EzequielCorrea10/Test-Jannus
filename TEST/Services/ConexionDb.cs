@@ -4,6 +4,9 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Objects;
 using TEST.Model;
+using System.Collections.Generic;
+using System.Linq;
+
 
 public class ConexionDB
 {
@@ -15,8 +18,7 @@ public class ConexionDB
     {
         connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
     }
-
-    public void ModifyProduct(int id, string nuevoNombre, decimal nuevoPrecio)
+        public void ModifyProduct(int id, string nuevoNombre, decimal nuevoPrecio)
     {
         try
         {
@@ -86,8 +88,10 @@ public class ConexionDB
             Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
         }
     }
-    public Product GetProducts()
+
+    internal List <Product> GetProducts()
     {
+        var list = new List<Product>();
         try
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -96,19 +100,42 @@ public class ConexionDB
 
                 SqlCommand command = new SqlCommand("sp_GetProducts", connection);
                 command.CommandType = CommandType.StoredProcedure;
+
+                var id = new System.Data.SqlClient.SqlParameter("@Id", System.Data.SqlDbType.Int)
+                {
+                    Direction = System.Data.ParameterDirection.Output
+                };
+                var name = new System.Data.SqlClient.SqlParameter("@Name", System.Data.SqlDbType.VarChar, 50)
+                {
+                    Direction = System.Data.ParameterDirection.Output
+                };
+                var price = new System.Data.SqlClient.SqlParameter("@Price", System.Data.SqlDbType.Decimal)
+                {
+                    Precision = 10,
+                    Scale = 2,
+                    Direction = System.Data.ParameterDirection.Output
+                };
+                var productTypeId = new System.Data.SqlClient.SqlParameter("@ProductTypeId", System.Data.SqlDbType.Int)
+                {
+                    Direction = System.Data.ParameterDirection.Output
+                };
                 command.ExecuteNonQuery();
 
 
+                Product product = new Product(id, name, price, productTypeId);
+                list.Add(product);
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
-
         }
+        return list;
+
     }
-    public void GetProductTypes()
+    internal List<ProductType> GetProductTypes()
     {
+        var list = new List<ProductType>();
         try
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -117,16 +144,24 @@ public class ConexionDB
 
                 SqlCommand command = new SqlCommand("sp_GetProductTypes", connection);
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
-                var returnParameter = command.Parameters.Add("@ReturnVal", SqlDbType.Int);
-                returnParameter.Direction = ParameterDirection.ReturnValue;
 
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["Id"]);
+                        string description = Convert.ToString(reader["Description"]);
+
+                        ProductType productType = new ProductType(id, description);
+                        list.Add(productType);
+                    }
+                }
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
-
         }
+        return list;
     }
 }

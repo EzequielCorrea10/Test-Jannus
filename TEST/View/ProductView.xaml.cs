@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using TEST.Model;
 using TEST.ViewModel;
 
 namespace TEST
@@ -25,7 +26,7 @@ namespace TEST
         public ProductView()
         {
             InitializeComponent();
-            var productModel = new ProductViewModel();
+            productModel = new ProductViewModel();
         }
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
@@ -49,7 +50,10 @@ namespace TEST
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            productModel.AddProduct( name, price, productTypeId = 1 );
+            var productType = (ProductType)ProductType.SelectedItem;
+            productModel.AddProduct( name, price, productTypeId = productType.Id);
+            MessageBox.Show("Product added succesfully");
+
         }
 
         private void Back(object sender, RoutedEventArgs e)
@@ -57,12 +61,18 @@ namespace TEST
             this.Close();        
         }
 
-        private void ListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
-            var userList = productModel.GetProducts();
-
+            var typeList = productModel.GetProductTypes();
+            foreach (var item in typeList)
+            {
+                ProductType.Items.Add(item);
+            }
+            
         }
 
-
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
     }
 }

@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ProductView" Height="1080" Width="720">
+        Title="ProductView" Height="1080" Width="720"
+        Loaded="Window_Loaded_1">
     <Grid >
         <Grid.Background>
             <SolidColorBrush Color="#FF282F34"></SolidColorBrush>
@@ -19,8 +20,8 @@
             <ListView Name="ProductType" Height="196" Canvas.Left="93" Canvas.Top="536" Width="301" SelectionChanged="ListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Product Type Id" DisplayMemberBinding="{Binding ProductTypeId}"/>
-                        <GridViewColumn Header="Product Type" DisplayMemberBinding="{Binding ProductType}"/>
+                        <GridViewColumn x:Name="TypeId" Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn x:Name="Description" Header="Description" DisplayMemberBinding="{Binding Description}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

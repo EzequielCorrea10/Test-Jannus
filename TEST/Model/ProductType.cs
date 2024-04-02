@@ -10,6 +10,11 @@ namespace TEST.Model
     {
         public int Id { get; set; }
         public string Description { get; set; }
+        public ProductType( int id, string desciption)
+        {
+            this.Description = desciption;
+            this.Id = id;
+        }
 
     }
 }
