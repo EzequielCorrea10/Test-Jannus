@@ -41,7 +41,6 @@ namespace TEST
 
         }
         
-
         private void DeleteProduct_Click(object sender, RoutedEventArgs e)
         {
             var product = (Product)ProductSelected.SelectedItem;
