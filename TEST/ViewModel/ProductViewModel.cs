@@ -20,11 +20,14 @@ namespace TEST.ViewModel
         {
             productService = new ProductService();
         }
-        public void AddProduct(string name, float price, int producTypeId)
+        public void AddProduct(string name, decimal price, int producTypeId)
         {
             productService.CreateProduct(name, price, producTypeId);
         }
-
+        public void EditProduct(string name, decimal price, int producTypeId)
+        {
+            productService.CreateProduct(name, price, producTypeId);
+        }
         public void DeleteProduct(int id)
         {
             productService.DeleteProduct(id);

@@ -12,9 +12,9 @@ namespace TEST.Model
         public int Id{ get; set; }
         public int ProductTypeId { get; set; }
         public string Name { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
 
-        public Product( string name, float price, int typeId )
+        public Product( string name, decimal price, int typeId )
         {
             this.Name = name;
             this.Price = price;
@@ -22,7 +22,7 @@ namespace TEST.Model
 
         }
 
-        public Product(int id, string name, float price, int typeId)
+        public Product(int id, string name, decimal price, int typeId)
         {
             this.Id = id;
             this.Name = name;

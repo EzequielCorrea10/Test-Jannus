@@ -27,7 +27,8 @@ namespace TEST
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            ModifyProductView win2 = new ModifyProductView();
+            win2.Show();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)

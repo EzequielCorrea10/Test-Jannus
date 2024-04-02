@@ -43,7 +43,7 @@ public class ConexionDB
         }
     }
 
-    public void InsertProduct(int typeId, string name, float price)
+    public void InsertProduct(int typeId, string name, decimal price)
     {
         try
         {
@@ -89,7 +89,7 @@ public class ConexionDB
         }
     }
 
-    internal List <Product> GetProducts()
+    internal List<Product> GetProducts()
     {
         var list = new List<Product>();
         try
@@ -101,29 +101,19 @@ public class ConexionDB
                 SqlCommand command = new SqlCommand("sp_GetProducts", connection);
                 command.CommandType = CommandType.StoredProcedure;
 
-                var id = new System.Data.SqlClient.SqlParameter("@Id", System.Data.SqlDbType.Int)
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    Direction = System.Data.ParameterDirection.Output
-                };
-                var name = new System.Data.SqlClient.SqlParameter("@Name", System.Data.SqlDbType.VarChar, 50)
-                {
-                    Direction = System.Data.ParameterDirection.Output
-                };
-                var price = new System.Data.SqlClient.SqlParameter("@Price", System.Data.SqlDbType.Decimal)
-                {
-                    Precision = 10,
-                    Scale = 2,
-                    Direction = System.Data.ParameterDirection.Output
-                };
-                var productTypeId = new System.Data.SqlClient.SqlParameter("@ProductTypeId", System.Data.SqlDbType.Int)
-                {
-                    Direction = System.Data.ParameterDirection.Output
-                };
-                command.ExecuteNonQuery();
+                    while (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["Id"]);
+                        string name = Convert.ToString(reader["Name"]);
+                        decimal price = Convert.ToDecimal(reader["Price"]);
+                        int productTypeId = Convert.ToInt32(reader["ProductTypeId"]);
 
-
-                Product product = new Product(id, name, price, productTypeId);
-                list.Add(product);
+                        Product product = new Product(id, name, price, productTypeId);
+                        list.Add(product);
+                    }
+                }
             }
         }
         catch (Exception ex)
@@ -131,8 +121,8 @@ public class ConexionDB
             Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
         }
         return list;
-
     }
+
     internal List<ProductType> GetProductTypes()
     {
         var list = new List<ProductType>();

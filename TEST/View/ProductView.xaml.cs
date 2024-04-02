@@ -19,7 +19,7 @@ namespace TEST
     public partial class ProductView : Window
     {
         private string name;
-        private float price;
+        private decimal price;
         private int productTypeId;
         private ProductViewModel productModel;
 
@@ -45,7 +45,7 @@ namespace TEST
 
         private void Price_TextChanged(object sender, TextChangedEventArgs e)
         {
-            price = float.Parse( Price.Text, CultureInfo.InvariantCulture.NumberFormat);
+            price = Convert.ToDecimal (Price.Text, CultureInfo.InvariantCulture.NumberFormat);
         }
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)

@@ -16,21 +16,21 @@ namespace TEST
     /// <summary>
     /// Lógica de interacción para App.xaml
     /// </summary>
-    public partial class ModifyProductView : Window
+    public partial class EditProductView : Window
     {
-        private string name;
-        private float price;
-        private int productTypeId;
+        private string newName;
+        private decimal newPrice;
+        private int newProductTypeId;
         private ProductViewModel productModel;
 
-        public ModifyProductView()
+        public EditProductView()
         {
             InitializeComponent();
             productModel = new ProductViewModel();
         }
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            name = Name.Text;
+            newName = NewName.Text;
         }
         private void Price_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
@@ -45,13 +45,13 @@ namespace TEST
 
         private void Price_TextChanged(object sender, TextChangedEventArgs e)
         {
-            price = float.Parse( Price.Text, CultureInfo.InvariantCulture.NumberFormat);
+            newPrice = Convert.ToDecimal(NewPrice.Text, CultureInfo.InvariantCulture.NumberFormat);
         }
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
             var productType = (ProductType)ProductType.SelectedItem;
-            productModel.AddProduct( name, price, productTypeId = productType.Id);
+            productModel.AddProduct( newName, newPrice, newProductTypeId = productType.Id);
             MessageBox.Show("Product added succesfully");
 
         }
@@ -68,7 +68,13 @@ namespace TEST
             {
                 ProductType.Items.Add(item);
             }
-            
+            var productList = productModel.GetProducts();
+
+            foreach (var item in typeList)
+            {
+                Products.Items.Add(item);
+            }
+
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

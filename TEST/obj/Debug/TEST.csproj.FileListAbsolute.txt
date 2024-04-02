@@ -84,3 +84,5 @@ H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\System.Text.Encodings.Web.xml
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\System.Text.Json.xml
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\System.Threading.Tasks.Extensions.xml
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\System.ValueTuple.xml
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\ModifyProductView.baml
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\ModifyProductView.g.cs
