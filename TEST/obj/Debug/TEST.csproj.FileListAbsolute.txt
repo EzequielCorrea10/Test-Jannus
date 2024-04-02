@@ -27,7 +27,6 @@ H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.csproj.CopyComplete
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.exe
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.pdb
-H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.csproj.AssemblyReference.cache
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\Azure.Core.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\Azure.Identity.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\EntityFramework.dll
@@ -86,3 +85,6 @@ H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\System.Threading.Tasks.Extensions.x
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\System.ValueTuple.xml
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\EditProductView.baml
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\EditProductView.g.cs
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\DeleteProductView.baml
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\View\DeleteProductView.g.cs
+H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\TEST.csproj.AssemblyReference.cache

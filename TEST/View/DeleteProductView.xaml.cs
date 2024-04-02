@@ -16,7 +16,7 @@ namespace TEST
     /// <summary>
     /// Lógica de interacción para App.xaml
     /// </summary>
-    public partial class EditProductView : Window
+    public partial class DeleteProductView : Window
     {
         private int id;
         private string newName;
@@ -24,31 +24,11 @@ namespace TEST
         private int newProductTypeId;
         private ProductViewModel productModel;
 
-        public EditProductView()
+        public DeleteProductView()
         {
             InitializeComponent();
             productModel = new ProductViewModel();
         }
-        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            newName = NewName.Text;
-        }
-        private void Price_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-            // Permitir solo dígitos, punto decimal y un solo signo negativo al principio
-            if (!char.IsDigit(e.Text, e.Text.Length - 1) && e.Text != "."  ||
-                (e.Text == "." && ((TextBox)sender).Text.Contains(".")))
-            {
-                e.Handled = true; // Cancelar la entrada
-            }
-
-        }
-
-        private void Price_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            newPrice = Convert.ToDecimal(NewPrice.Text, CultureInfo.InvariantCulture.NumberFormat);
-        }
-
 
         private void Back(object sender, RoutedEventArgs e)
         {
@@ -57,11 +37,6 @@ namespace TEST
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
-            var typeList = productModel.GetProductTypes();
-            foreach (var item in typeList)
-            {
-                ProductType.Items.Add(item);
-            }
 
             var productList = productModel.GetProducts();
             foreach (var item in productList)
@@ -70,18 +45,18 @@ namespace TEST
             }
 
         }
+        
+
+        private void DeleteProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var product = (Product)ProductSelected.SelectedItem;
+            productModel.DeleteProduct(product.Id);
+            MessageBox.Show("Product deleted succesfully");
+
+        }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        }
-
-
-        private void EditProduct_Click(object sender, RoutedEventArgs e)
-        {
-            var productType = (ProductType)ProductType.SelectedItem;
-            var product = (Product)ProductSelected.SelectedItem;
-            productModel.EditProduct(id = product.Id,newName, newPrice, newProductTypeId = productType.Id);
-            MessageBox.Show("Product edited succesfully");
 
         }
     }

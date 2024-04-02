@@ -33,7 +33,8 @@ namespace TEST
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            DeleteProductView win2 = new DeleteProductView();
+            win2.Show();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

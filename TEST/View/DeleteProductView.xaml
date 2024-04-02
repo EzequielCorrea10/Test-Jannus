@@ -12,7 +12,7 @@
         </Grid.Background>
         <Button  Click="Back" Content="Back&#xA;" Canvas.Left="93" Canvas.Top="60" FontSize="24" Margin="50,67,526,937" FontWeight="Bold"/>
         <Canvas x:Name="Product">
-            <ListView Name="ProductSelected" Height="196" Canvas.Left="93" Canvas.Top="198" Width="301" SelectionChanged="ListView_SelectionChanged">
+            <ListView Name="ProductSelected" Height="633" Canvas.Left="93" Canvas.Top="198" Width="424" SelectionChanged="ListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn x:Name="Id" Header="Id" DisplayMemberBinding="{Binding Id}"/>
@@ -24,21 +24,6 @@
             </ListView>
             <TextBlock Canvas.Left="93" TextWrapping="Wrap" Canvas.Top="149" Height="49" Width="156" FontSize="24" Foreground="#FFA1A4A6"><Run Text="Product"/><Run Text="s"/></TextBlock>
         </Canvas>
-        <Canvas Name="EditProduct">
-            <TextBlock Canvas.Left="91" TextWrapping="Wrap" Text="New Name" Canvas.Top="434" Height="38" Width="156" FontSize="24" Foreground="#FFA1A4A6"/>
-            <TextBox x:Name="NewName" Height="46" Canvas.Left="91" TextWrapping="Wrap"  Canvas.Top="472" Width="302" TextChanged="TextBox_TextChanged"/>
-            <TextBlock Canvas.Left="91" TextWrapping="Wrap" Canvas.Top="552" Height="38" Width="142" FontSize="24" Foreground="#FFA1A4A6"><Run Text="New "/><Run Text="Price"/></TextBlock>
-            <TextBox x:Name="NewPrice" Height="46" Canvas.Left="91" TextWrapping="Wrap" Canvas.Top="590" Width="302" TextChanged="Price_TextChanged" PreviewTextInput="Price_PreviewTextInput"/>
-            <Button  Click="EditProduct_Click" Content="Edit Product" Canvas.Left="478" Canvas.Top="906" Width="184" Height="56" FontSize="24" FontWeight="Bold"/>
-            <ListView Name="ProductType" Height="196" Canvas.Left="91" Canvas.Top="724" Width="302" SelectionChanged="ListView_SelectionChanged">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn x:Name="TypeId" Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                        <GridViewColumn x:Name="Description" Header="Description" DisplayMemberBinding="{Binding Description}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <TextBlock Canvas.Left="91" TextWrapping="Wrap" Text="Product Type" Canvas.Top="676" Height="48" Width="156" FontSize="24" Foreground="#FFA1A4A6"/>
-        </Canvas>
+        <Button  Click="DeleteProduct_Click" Content="Delete Product" Canvas.Left="478" Canvas.Top="906" FontSize="24" FontWeight="Bold" Margin="423,913,85,75"/>
     </Grid>
 </Window>

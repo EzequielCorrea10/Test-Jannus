@@ -184,6 +184,9 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\StockService.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
+    <Compile Include="View\DeleteProductView.xaml.cs">
+      <DependentUpon>DeleteProductView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditProductView.xaml.cs">
       <DependentUpon>EditProductView.xaml</DependentUpon>
     </Compile>
@@ -228,6 +231,10 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\DeleteProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\EditProductView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
