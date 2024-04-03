@@ -10,10 +10,5 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/testcontext.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/testcontext.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/readme.htm")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x64/msvcr120.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x64/sqlserverspatial140.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x86/msvcr120.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x86/sqlserverspatial140.dll")]
 
 

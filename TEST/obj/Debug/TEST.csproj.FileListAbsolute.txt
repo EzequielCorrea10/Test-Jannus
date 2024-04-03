@@ -96,10 +96,6 @@ H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\Report\ReportViewer.baml
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\Report\ReportViewer.g.cs
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\RdlCompile.cache
 H:\repos\WPF\TEST\Test-Jannus\TEST\obj\Debug\RdlCompile.compiled
-H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\Microsoft.ReportViewer.Common.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\Microsoft.ReportViewer.Design.dll
