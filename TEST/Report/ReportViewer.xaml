@@ -1,0 +1,15 @@
+﻿<Window x:Class="TEST.ReportViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        mc:Ignorable="d"
+        Title="ReportViewer" Height="1080" Width="720">
+    <Grid IsEnabled="True" >
+        <wfi:WindowsFormsHost >
+            <rv:ReportViewer x:Name="reportViewer" />
+            <!-- Donde "rv" es el prefijo del espacio de nombres de ReportViewer -->
+        </wfi:WindowsFormsHost>
+    </Grid>
+</Window>

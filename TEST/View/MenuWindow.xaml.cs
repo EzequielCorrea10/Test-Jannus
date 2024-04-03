@@ -16,7 +16,8 @@ namespace TEST
 
         private void StockRep_Click(object sender, RoutedEventArgs e)
         {
-
+            ReportViewer win2 = new ReportViewer();
+            win2.Show();
         }
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
