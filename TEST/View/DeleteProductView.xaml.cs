@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using TEST.Database;
+using TEST.Helpers;
 using TEST.ViewModel;
 
 namespace TEST
@@ -43,7 +44,12 @@ namespace TEST
         
         private void DeleteProduct_Click(object sender, RoutedEventArgs e)
         {
-            var product = (Product)ProductSelected.SelectedItem;
+            if (ProductSelected.SelectedItem == null)
+            {
+                MessageBox.Show("Invalid id entered. Please enter a valid id.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            var product = (Model.Product)ProductSelected.SelectedItem;
             productModel.DeleteProduct(product.Id);
             var completeMessage = MessageBox.Show("Product deleted succesfully");
         }

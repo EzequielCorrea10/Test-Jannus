@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using TEST.Database;
+using TEST.Helpers;
 using TEST.ViewModel;
 
 namespace TEST
@@ -78,8 +79,31 @@ namespace TEST
 
         private void EditProduct_Click(object sender, RoutedEventArgs e)
         {
-            var productType = (ProductType)ProductType.SelectedItem;
-            var product = (Product)ProductSelected.SelectedItem;
+            if (ProductSelected.SelectedItem == null)
+            {
+                MessageBox.Show("Invalid Product entered. Please enter a valid Product.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!ValidationHelper.IsValidName(newName))
+            {
+                NewName.Style = (Style)FindResource("InvalidTextBoxStyle");
+                MessageBox.Show("Invalid name entered. Please enter a valid name.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!ValidationHelper.IsValidPrice(newPrice))
+            {
+                NewPrice.Style = (Style)FindResource("InvalidTextBoxStyle");
+                MessageBox.Show("Invalid price entered. Please enter a valid price.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (ProductType.SelectedItem == null)
+            {
+                MessageBox.Show("Invalid productTypeId entered. Please enter a valid productTypeId.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            var productType = (Model.ProductType)ProductType.SelectedItem;
+            var product = (Model.Product)ProductSelected.SelectedItem;
             productModel.EditProduct(id = product.Id,newName, newPrice, newProductTypeId = productType.Id);
             MessageBox.Show("Product edited succesfully");
 

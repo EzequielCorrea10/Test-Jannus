@@ -6,6 +6,12 @@
         mc:Ignorable="d"
         Title="ProductTypeView" Height="1080" Width="720"
         Loaded="Window_Loaded_1">
+    <Window.Resources>
+        <Style x:Key="InvalidTextBoxStyle" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="Red" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+    </Window.Resources>
     <Grid >
         <Grid.Background>
             <SolidColorBrush Color="#FF282F34"></SolidColorBrush>
@@ -13,7 +19,7 @@
         <Button  Click="Back" Content="Back&#xA;" Canvas.Left="93" Canvas.Top="60" FontSize="24" Margin="50,67,526,937" FontWeight="Bold"/>
         <Canvas Name="AddProduct">
             <TextBlock Canvas.Left="93" TextWrapping="Wrap" Canvas.Top="206" Height="38" Width="143" FontSize="24" Foreground="#FFA1A4A6"><Run Text="Description"/><LineBreak/><Run Text="."/></TextBlock>
-            <TextBox x:Name="NewDescription" Height="46" Canvas.Left="93" TextWrapping="Wrap"  Canvas.Top="269" Width="301" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="NewDescription"  Height="46" Canvas.Left="93" TextWrapping="Wrap"  Canvas.Top="269" Width="301" TextChanged="TextBox_TextChanged"/>
             <Button  Click="AddProductType_Click" Content="Add Product Type" Canvas.Left="429" Canvas.Top="896" Width="244" Height="78" FontSize="24" FontWeight="Bold"/>
         </Canvas>
 

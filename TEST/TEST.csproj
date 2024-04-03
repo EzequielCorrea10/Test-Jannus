@@ -230,6 +230,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Report\ReportViewer.xaml.cs">
       <DependentUpon>ReportViewer.xaml</DependentUpon>
     </Compile>
@@ -310,9 +311,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Report\ReportViewer.xaml">
       <Generator>MSBuild:Compile</Generator>

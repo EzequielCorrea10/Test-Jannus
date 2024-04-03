@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TEST.Model;
 using TEST.ViewModel;
+using TEST.Helpers;
 
 namespace TEST
 {
@@ -43,6 +44,13 @@ namespace TEST
         }
         private void AddProductType_Click(object sender, RoutedEventArgs e)
         {
+            if (!ValidationHelper.IsValidName(description))
+            {
+                NewDescription.Style = (Style)FindResource("InvalidTextBoxStyle");
+                MessageBox.Show("Invalid description entered. Please enter a valid description.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+ 
             productModel.AddProductType(description);
             MessageBox.Show("Product added succesfully");
 

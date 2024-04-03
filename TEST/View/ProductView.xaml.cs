@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TEST.Database;
 using TEST.ViewModel;
+using TEST.Helpers;
 
 namespace TEST
 {
@@ -50,7 +51,26 @@ namespace TEST
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            var productType = (ProductType)ProductType.SelectedItem;
+            //Validaciones
+            if (!ValidationHelper.IsValidName(name))
+            {
+                Name.Style = (Style)FindResource("InvalidTextBoxStyle");
+                MessageBox.Show("Invalid name entered. Please enter a valid name.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!ValidationHelper.IsValidPrice(price))
+            {
+                Price.Style = (Style)FindResource("InvalidTextBoxStyle");
+                MessageBox.Show("Invalid price entered. Please enter a valid price.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (ProductType.SelectedItem == null)
+            {
+                MessageBox.Show("Invalid productTypeId entered. Please enter a valid productTypeId.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var productType = (Model.ProductType)ProductType.SelectedItem;
             productModel.AddProduct( name, price, productTypeId = productType.Id);
             MessageBox.Show("Product added succesfully");
 

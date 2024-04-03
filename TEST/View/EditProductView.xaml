@@ -6,6 +6,12 @@
         mc:Ignorable="d"
         Title="EditProductView" Height="1080" Width="720"
         Loaded="Window_Loaded_1">
+    <Window.Resources>
+        <Style x:Key="InvalidTextBoxStyle" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="Red" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+    </Window.Resources>
     <Grid >
         <Grid.Background>
             <SolidColorBrush Color="#FF282F34"></SolidColorBrush>
