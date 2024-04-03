@@ -40,7 +40,7 @@ namespace TEST
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         private void AddType_Click(object sender, RoutedEventArgs e)

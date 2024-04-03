@@ -237,7 +237,7 @@
     <Compile Include="Services\ConexionDb.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\StockService.cs" />
-    <Compile Include="TestDataSet.Designer.cs">
+    <Compile Include="Database\TestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet.xsd</DependentUpon>
@@ -295,15 +295,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="TestDataSet.xsc">
+    <None Include="Database\TestDataSet.xsc">
       <DependentUpon>TestDataSet.xsd</DependentUpon>
     </None>
-    <None Include="TestDataSet.xsd">
+    <None Include="Database\TestDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TestDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TestDataSet.xss">
+    <None Include="Database\TestDataSet.xss">
       <DependentUpon>TestDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>

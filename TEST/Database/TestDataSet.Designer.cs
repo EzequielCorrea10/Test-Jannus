@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace TEST {
+namespace TEST.Database {
     
     
     /// <summary>
@@ -1127,7 +1127,7 @@ namespace TEST {
         }
     }
 }
-namespace TEST.TestDataSetTableAdapters {
+namespace TEST.Database.TestDataSetTableAdapters {
     
     
     /// <summary>
