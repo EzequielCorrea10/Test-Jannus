@@ -70,14 +70,24 @@ public class ConexionDB
         }
     }
 
-    internal List<Product> GetProducts()
+    internal List<TEST.Model.Product> GetProducts()
     {
-        List<Product> list = new List<Product>();
+        List<TEST.Model.Product> list = new List<TEST.Model.Product>();
         try
         {
             using (var context = new TestEntities1())
             {
-                 list = context.Product.ToList();
+                var query = from product in context.Product
+                            join productType in context.ProductType
+                            on product.ProductTypeId equals productType.Id
+                            select new TEST.Model.Product
+                            {
+                                Id = product.Id,
+                                Name = product.Name,
+                                ProductType = productType.description,
+                                Price = product.Price.Value
+                            };
+                list = query.ToList();
 
             }
         }
@@ -88,15 +98,49 @@ public class ConexionDB
         return list;
     }
 
-    internal List<ProductType> GetProductTypes()
+    internal List<TEST.Model.ProductType> GetProductTypes()
     {
-        List<ProductType> list = new List<ProductType>();
+        List<TEST.Model.ProductType> list = new List<TEST.Model.ProductType>();
         try
         {
-
             using (var context = new TestEntities1())
             {
-                list = context.ProductType.ToList();
+                var query = from produtype in context.ProductType
+                            select new TEST.Model.ProductType
+                            {
+                                Id = produtype.Id,
+                                Description = produtype.description
+                            };
+                list = query.ToList();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al obtener los tipos de productos: " + ex.Message);
+        }
+        return list;
+    }
+
+    internal List<TEST.Model.Product> GetStock()
+    {
+        List<TEST.Model.Product> list = new List<TEST.Model.Product>();
+        try
+        {
+            using (var context = new TestEntities1())
+            {
+                var query = from stock in context.Stock
+                            join product in context.Product
+                            on stock.ProductId equals product.Id
+                            join productType in context.ProductType
+                            on product.ProductTypeId equals productType.Id
+                            select new TEST.Model.Product
+                            {
+                                Id = product.Id,
+                                Name = product.Name,
+                                Price = product.Price.Value,
+                                ProductType = productType.description
+                            };
+                list = query.ToList();
             }
         }
         catch (Exception ex)

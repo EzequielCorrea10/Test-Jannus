@@ -33,13 +33,17 @@ namespace TEST.Services
         {
             conexionDB.DeleteProduct(id);
         }
-        internal List<Product> GetProducts()
+        internal List<Model.Product> GetProducts()
         {
             return conexionDB.GetProducts();
         }
-        internal List<ProductType> GetProductTypes()
+        internal List<TEST.Model.ProductType> GetProductTypes()
         {
             return conexionDB.GetProductTypes();
+        }
+        internal List<TEST.Model.Product> GetStock()
+        {
+            return conexionDB.GetStock();
         }
     }
 }

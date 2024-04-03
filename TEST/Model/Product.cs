@@ -7,27 +7,25 @@ using System.Threading.Tasks;
 
 namespace TEST.Model
 {
-    //class Product
-    //{
-    //    public int Id{ get; set; }
-    //    public int ProductTypeId { get; set; }
-    //    public string Name { get; set; }
-    //    public decimal Price { get; set; }
+    class Product
+    {
+        public int Id { get; set; }
+        public string ProductType { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
 
-    //    public Product( string name, decimal price, int typeId )
-    //    {
-    //        this.Name = name;
-    //        this.Price = price;
-    //        this.ProductTypeId = typeId;
+        public Product()
+        {
 
-    //    }
 
-    //    public Product(int id, string name, decimal price, int typeId)
-    //    {
-    //        this.Id = id;
-    //        this.Name = name;
-    //        this.Price = price;
-    //        this.ProductTypeId = typeId;
-    //    }
-    //}
+        }
+
+        public Product(int id, string name, decimal price, string productType)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Price = price;
+            this.ProductType = productType;
+        }
+    }
 }

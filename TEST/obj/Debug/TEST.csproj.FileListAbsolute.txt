@@ -153,3 +153,4 @@ H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\pt\Microsoft.ReportViewer.WinForms.
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+H:\repos\WPF\TEST\Test-Jannus\TEST\bin\Debug\Report\Report1.rdlc

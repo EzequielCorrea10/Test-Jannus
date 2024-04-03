@@ -36,13 +36,17 @@ namespace TEST.ViewModel
         {
             productService.DeleteProduct(id);
         }
-        public List<Product> GetProducts()
+        public List<Model.Product> GetProducts()
         {
            return  productService.GetProducts();
         }
-        internal List<ProductType> GetProductTypes()
+        internal List<Model.ProductType> GetProductTypes()
         {
           return  productService.GetProductTypes();
+        }
+        internal List<Model.Product> GetStock()
+        {
+            return productService.GetStock();
         }
     }
 }

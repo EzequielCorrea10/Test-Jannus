@@ -261,7 +261,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\Stock.cs" />
     <Compile Include="Model\ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -280,7 +279,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\Report1.rdlc" />
+    <EmbeddedResource Include="Report\Report1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EntityDeploy Include="Database\TestContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TestContext.Designer.cs</LastGenOutput>
@@ -289,6 +290,7 @@
       <DependentUpon>TestContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TEST.Model.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

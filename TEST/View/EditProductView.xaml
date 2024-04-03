@@ -18,7 +18,7 @@
                         <GridViewColumn x:Name="Id" Header="Id" DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn x:Name="Name" Header="Name" DisplayMemberBinding="{Binding Name}"/>
                         <GridViewColumn x:Name="Price" Header="Price" DisplayMemberBinding="{Binding Price}"/>
-                        <GridViewColumn x:Name="ProductTypeId" Header="ProductTypeId" DisplayMemberBinding="{Binding ProductTypeId}"/>
+                        <GridViewColumn x:Name="ProductTypeId" Header="ProductType" DisplayMemberBinding="{Binding ProductType}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -34,7 +34,7 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn x:Name="TypeId" Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                        <GridViewColumn x:Name="Description" Header="Description" DisplayMemberBinding="{Binding description}"/>
+                        <GridViewColumn x:Name="Description" Header="Description" DisplayMemberBinding="{Binding Description}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
